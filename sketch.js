@@ -1,4 +1,4 @@
-let button, img;
+let button, button1, button2, button3, button4, button5, button6, button7, img;
 function preload(){
   home = loadImage('assets/homepage.png');
   account = loadImage('assets/account.png');
@@ -6,6 +6,7 @@ function preload(){
   messages = loadImage('assets/messages.png');
   search = loadImage('assets/searchpage.png');
   post = loadImage('assets/post.png');
+  kitty = loadImage('assets/catsearch.png');
 
 
   //buttons
@@ -16,7 +17,8 @@ function preload(){
   searchb = loadImage('assets/searchbutton.png');
   postb = loadImage('assets/postbutton.png');
   profile = loadImage('assets/profile.png');
-
+  heartb = loadImage('assets/hearticon.png');
+  likedhome = loadImage('assets/likedhome.png');
 
 }
 
@@ -27,6 +29,11 @@ function setup() {
   button = createImg('assets/activitybutton.png', 'activity button');
   button.position(300,750);
   button.mousePressed(loadActivity);
+  
+
+  button7 = createImg('assets/hearticon.png', 'activity button');
+  button7.position(300,440);
+  button7.mousePressed(function(){ (loadlikedHome) ( button7.remove() )});
 
   button1 = createImg('assets/searchbutton.png', 'search button');
   button1.position(130,750);
@@ -58,12 +65,21 @@ function loadAccount(){
 }
 function loadHome(){
   image(home,0,0);
+
+}
+function loadlikedHome(){
+  image(likedhome,0,0);
+
 }
 function loadSearchy(){
   image(search,0,0);
   button6 = createImg('assets/profile.png', 'proofile button');
   button6.position(40,140);
-  button6.mousePressed(function(){ (loadAccount) ( button6.remove() )});
+  button6.mousePressed(function(){ (loadAccount) ( button6.remove() )( button8.remove() )});
+
+  button8 = createImg('assets/searchbar.png', 'search bar button');
+  button8.position(70,700);
+  button8.mousePressed(function(){ (loadKitty) ( button8.remove() )( button6.remove() )});
 
 }
 function remove5(){
@@ -74,6 +90,9 @@ function loadMessages(){
 }
 function loadPost(){
   image(post,0,0);
+}
+function loadKitty(){
+  image(kitty,0,0);
 }
 // function draw() {
 //   // put drawing code here
